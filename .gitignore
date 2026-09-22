@@ -1,0 +1,26 @@
+# Robot Framework generated outputs
+log.html
+report.html
+output.xml
+output.xml.gz
+*.html
+
+# Robot screenshots / artifacts
+*.png
+*.jpg
+*.jpeg
+*.gif
+screenshots/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
