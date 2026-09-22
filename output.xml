@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.9.13 on win32)" generated="2026-09-22T23:18:44.173521" rpa="false" schemaversion="5">
+<suite id="s1" name="TC 1" source="E:\PYTHON\TC_1.robot">
+<test id="s1-t1" name="Open Browser And Verify Title" line="30">
+<kw name="Open Browser And Navigate To HomePage" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-22T23:18:44.702590" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-22T23:18:44.702590" elapsed="5.040571"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-22T23:18:49.743161" elapsed="0.053843"/>
+</kw>
+<arg>${HOME_PAGE_URL}</arg>
+<doc>This keyword opens a browser and navigates to the specified homePage URL.</doc>
+<status status="PASS" start="2026-09-22T23:18:44.702590" elapsed="5.094414"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=[class="login_logo"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-22T23:18:49.804934" elapsed="0.041732"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-22T23:18:49.848425" elapsed="2.485514"/>
+</kw>
+<doc>This test case opens a browser, navigates to a homePage URL, and verifies the page title.</doc>
+<status status="PASS" start="2026-09-22T23:18:44.698271" elapsed="7.635668"/>
+</test>
+<test id="s1-t2" name="Login With Valid Credentials" line="34">
+<kw name="Open Browser And Navigate To HomePage" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-22T23:18:52.333939" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-22T23:18:52.333939" elapsed="2.160621"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-22T23:18:54.496571" elapsed="0.841943"/>
+</kw>
+<arg>${HOME_PAGE_URL}</arg>
+<doc>This keyword opens a browser and navigates to the specified homePage URL.</doc>
+<status status="PASS" start="2026-09-22T23:18:52.333939" elapsed="3.004575"/>
+</kw>
+<kw name="Login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-22T23:18:55.342557" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-22T23:18:55.342557" elapsed="0.318451"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-22T23:18:55.663040" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-22T23:18:55.663040" elapsed="0.147048"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-22T23:18:55.810088" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-22T23:18:55.810088" elapsed="0.175192"/>
+</kw>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>This Keyword is used to login</doc>
+<status status="PASS" start="2026-09-22T23:18:55.340540" elapsed="0.644740"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=[class="inventory_list"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-22T23:18:55.986279" elapsed="0.120051"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Products</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-22T23:18:56.106330" elapsed="0.054815"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-22T23:18:56.162146" elapsed="2.829524"/>
+</kw>
+<doc>This test case logs in with valid credentials and verifies successful login.</doc>
+<status status="PASS" start="2026-09-22T23:18:52.333939" elapsed="6.657731"/>
+</test>
+<status status="PASS" start="2026-09-22T23:18:44.177554" elapsed="14.814116"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC 1" id="s1" pass="2" fail="0" skip="0">TC 1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
