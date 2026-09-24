@@ -1,6 +1,8 @@
 *** Settings ***
 Library           SeleniumLibrary
 
+Documentation    Robot Framework automation suite for SauceDemo UI testing with SeleniumLibrary.
+
 # Test Setup and Teardown   
 # This will run before and after each test case in the suite.
 Test Setup       Open Browser And Navigate To HomePage    ${HOME_PAGE_URL}
