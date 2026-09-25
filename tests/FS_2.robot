@@ -28,7 +28,13 @@ Display Names with Index
     FOR    ${index}    ${name}    IN ENUMERATE    @{names}
         Log    Index: ${index}, Name: ${name}
     END
-    
+
+Counter
+    [Arguments]    ${count}
+    WHILE    ${count} > 0
+        Log    ${count}
+        ${count} =    Evaluate    ${count} - 1
+    END
 *** Test Cases ***
 check Age Test
     Check Age    20
