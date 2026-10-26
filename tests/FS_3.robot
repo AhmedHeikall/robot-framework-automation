@@ -22,7 +22,7 @@ Open Browser AND Maximize Window
 
 *** Test Cases ***
 Check Checkboxes
-    [Documentation]    This test case will check the checkboxes on the page if they are not already checked.
+    [Documentation]    This test case will check the checkboxes on the page. If a checkbox is already checked, it will log a message indicating that. If not, it will click the checkbox to check it.
     Open Browser AND Maximize Window    ${URL_CHECKBOXES}    ${BROWSER}
     ${checkbox1_state}=    Get Element Attribute    ${CHECKBOX1}    checked
     Run Keyword If    '${checkbox1_state}'=='true'    
