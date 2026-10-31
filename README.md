@@ -1,50 +1,44 @@
-## Robot Framework Automation 
+# Robot Framework UI Automation
 
-This repository contains hands-on practice with Robot Framework and SeleniumLibrary. The exercises cover web UI automation, reusable keywords, test data, flow control, and checking page elements.
+Hands-on web testing practice using Robot Framework and SeleniumLibrary.
 
-## What I Practiced
+## Projects
 
-- Opened a browser, navigated to a web page, and maximized the browser window.
-- Automated login scenarios on SauceDemo, including valid credentials, invalid credentials, and empty fields.
-- Checked page content and elements to verify expected results, including login errors and the products page.
-- Read checkbox state and clicked a checkbox only when it was not already selected.
-- Switched into an embedded iframe on GlobalSQA and read its contact email header.
-- Created reusable keywords with arguments to organize repeated actions.
-- Used variables for URLs, browser names, credentials, element locators, and expected messages.
-- Practiced Robot Framework flow control with `IF/ELSE`, `FOR`, `WHILE`, and `IN ENUMERATE` loops.
+### `foundations/`
 
-## What I Learned
+Beginner exercises covering SauceDemo login, reusable keywords, variables, flow control, checkboxes, and iframe interaction. Test suites: `FS_1.robot`–`FS_4.robot`. 
 
-- Robot Framework suites use sections such as `*** Settings ***`, `*** Variables ***`, `*** Keywords ***`, and `*** Test Cases ***`.
-- Keywords make test steps reusable and easier to read; arguments let a keyword work with different values.
-- Variables help keep test data and locators in one place.
-- Setup and teardown can prepare and clean up the browser around each test.
-- SeleniumLibrary keywords can interact with browser elements and verify the resulting page state.
-- SeleniumLibrary can switch into an iframe before locating elements inside it, even when a similar locator also exists on the parent page.
-- Conditional logic and loops help express decisions and repeated work in readable test steps.
-- A test should verify observable behavior with assertions, not just perform browser actions.
-- Robot Framework writes reports, logs, and structured output that can be used to review a run.
+### `saucedemo-pom-gen-ai/`
 
-## Project Structure
+SauceDemo login tests organized with the Page Object Model:
 
-```text
-.
-├── README.md
-├── tests/
-│   ├── FS_1.robot
-│   ├── FS_2.robot
-│   ├── FS_3.robot
-│   └── FS_4.robot
-└── results/
-    ├── report.html
-    ├── log.html
-    └── output.xml
+| Folder | Contents |
+|---|---|
+| `pages/` | Login locators and page actions |
+| `business/` | Reusable login workflows |
+| `core/` | Browser setup and cleanup |
+| `tests/` | 21 login scenarios and assertions |
+| `results/` | HTML report, execution log, and XML output |
+| `resources/` | Space for shared resources |
+
+The login scenarios cover accepted and locked-out accounts, incorrect or missing credentials, and boundary/edge-case inputs.
+
+## Skills practiced
+
+- Browser automation and page assertions with SeleniumLibrary
+- Reusable Robot Framework keywords, variables, and arguments
+- Conditional logic and loops
+- Test reports and execution logs
+- POM structure for maintainable UI tests
+
+## Generative AI
+
+Generative AI helps draft test ideas, locators, keywords, and documentation. I validate suggestions against the application, run the tests, and review results before accepting changes.
+
+## Run the login suite
+
+From `saucedemo-pom-gen-ai/`:
+
+```powershell
+robot --outputdir results tests\login_tests.robot
 ```
-
-### Test files
-
-- [`tests/FS_1.robot`](tests/FS_1.robot) — SauceDemo browser and login exercises. It defines browser setup and teardown, reusable navigation and login keywords, and checks for successful login, invalid credentials, and empty credentials.
-- [`tests/FS_2.robot`](tests/FS_2.robot) — Flow-control exercises. It defines keywords using `IF/ELSE`, `FOR`, `WHILE`, and `IN ENUMERATE` to check an age, count numbers, and display names with or without indexes.
-- [`tests/FS_3.robot`](tests/FS_3.robot) — SeleniumLibrary checkbox exercise for The Internet website. It reads each checkbox's state and clicks it when it is not already checked.
-- [`tests/FS_4.robot`](tests/FS_4.robot) — GlobalSQA iframe exercise. It waits for the `globalSqa` iframe, switches into it, reads the contact email header, and verifies that the text is not empty.
-
